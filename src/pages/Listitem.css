@@ -1,0 +1,202 @@
+/* Admin Panel Layout */
+.admin-panel {
+  padding: 20px;
+  background-color: #f9f9f9;
+  font-family: "Roboto", Arial, sans-serif;
+  max-width: 1200px;
+  margin-left: 150px;
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #333;
+  font-size: 1.8rem;
+  font-weight: 500;
+}
+
+/* Table Styling */
+.table-container {
+  overflow-x: auto;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px;
+}
+
+.product-table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+  min-width: 600px;
+  font-size: 0.9rem;
+}
+
+.product-table th,
+.product-table td {
+  padding: 16px 20px;
+  border-bottom: 1px solid #ddd;
+}
+
+.product-table th {
+  background-color: #f5f5f5;
+  font-weight: 600;
+  color: #333;
+}
+
+.product-table tbody tr:hover {
+  background-color: #f9f9f9;
+}
+
+.image-gallery {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.product-thumbnail {
+  width: 60px;
+  height: 60px;
+  object-fit: cover;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+}
+.star {
+  font-size: 18px;
+  color: #ddd;
+}
+
+.star.filled {
+  color: #ff9800;
+}
+
+/* Action Buttons */
+.action-button {
+  padding: 6px 12px;
+  font-size: 0.85rem;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  color: white;
+  transition: background-color 0.3s ease;
+}
+
+.action-button.view {
+  background-color: #3498db;
+}
+
+.action-button.edit {
+  background-color: #f39c12;
+}
+
+.action-button.delete {
+  background-color: #e74c3c;
+}
+
+.action-button:hover {
+  opacity: 0.85;
+}
+
+/* Cards for Mobile View */
+.mobile-product-list {
+  display: none;
+}
+
+.product-card {
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  padding: 16px;
+  margin-bottom: 20px;
+}
+
+.product-images {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 12px;
+}
+
+.product-card-image {
+  width: 80px;
+  height: 80px;
+  object-fit: cover;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+}
+
+.product-card-details p {
+  margin: 4px 0;
+  color: #555;
+}
+
+.product-card-actions {
+  display: flex;
+  gap: 8px;
+  margin-top: 12px;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 1024px) {
+  .product-table th,
+  .product-table td {
+    font-size: 0.8rem;
+    padding: 12px 16px;
+  }
+
+  .admin-panel {
+    margin-left: 20px;
+    margin-right: 20px;
+  }
+}
+.btns{
+  display: flex;
+  gap: 15px;
+}
+@media (max-width: 768px) {
+  .product-table {
+    display: none;
+  }
+
+  .admin-panel {
+    margin-left: 0;
+    margin-right: 0;
+    padding: 10px;
+    margin-top: 75px;
+  }
+
+  .mobile-product-list {
+    display: block;
+  }
+}
+
+/* Save Changes and Cancel Buttons */
+.form-actions button {
+  padding: 10px 20px;
+  font-size: 16px;
+  font-weight: bold;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-right: 10px;
+}
+
+.form-actions button[type="submit"] {
+  background-color: #4caf50;
+  color: white;
+}
+
+.form-actions button[type="submit"]:hover {
+  background-color: #45a049;
+  transform: scale(1.05);
+}
+
+.form-actions button[type="button"] {
+  background-color: #f44336;
+  color: white;
+}
+
+.form-actions button[type="button"]:hover {
+  background-color: #e53935;
+  transform: scale(1.05);
+}

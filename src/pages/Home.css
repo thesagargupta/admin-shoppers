@@ -1,0 +1,177 @@
+/* General Styles */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f5f7fa;
+    overflow-x: hidden; /* Prevent horizontal overflow */
+  }
+  
+  /* Home Container */
+  .home-container {
+    display: flex;
+    flex-direction: column;
+    padding: 2rem 1rem;
+    transition: margin-left 0.3s ease;
+    min-height: 100vh;
+    box-sizing: border-box;
+    overflow: hidden; /* Prevent overflow in the home container */
+    margin-left: 220px; /* Sidebar width reserved */
+  }
+  
+  /* Home Header */
+  .home-header {
+    text-align: center;
+    margin-bottom: 2rem;
+  }
+  
+  .home-header h1 {
+    font-size: 2.5rem;
+    color: #333;
+  }
+  
+  .home-header p {
+    font-size: 1rem;
+    color: #666;
+    margin-top: 10px;
+  }
+  
+  /* Statistics Summary */
+  .statistics-summary {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 2rem;
+    flex-wrap: wrap;
+  }
+  
+  .stat-card {
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 3.5rem;
+    text-align: center;
+    flex: 1 1 250px;
+    margin: 0.5rem;
+    transition: transform 0.3s ease;
+    box-sizing: border-box; /* Ensure proper box sizing */
+  }
+  
+  .stat-card:hover {
+    transform: translateY(-5px);
+  }
+  
+  .stat-icon {
+    font-size: 2rem;
+    color: #444;
+  }
+  
+  .stat-card h2 {
+    font-size: 2rem;
+    color: #333;
+  }
+  
+  .stat-card p {
+    font-size: 1rem;
+    color: #888;
+  }
+  
+  /* Dashboard Grid */
+  .dashboard-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-bottom: 2rem;
+    overflow: hidden;
+  }
+  
+  .dashboard-card {
+    background: #fff;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    transition: transform 0.3s ease;
+    box-sizing: border-box;
+  }
+  
+  .dashboard-card:hover {
+    transform: translateY(-5px);
+  }
+  
+  /* Footer */
+  .home-footer {
+    margin-top: 2rem;
+    text-align: center;
+    color: #fff;
+    font-size: 0.9rem;
+    padding: 1rem 0;
+    background-color: #11112b;
+    box-shadow: 0 -4px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Responsive Styles */
+  @media (max-width: 1024px) {
+    .home-container {
+      margin-left: 0; /* Remove sidebar space for mobile/tablet */
+      padding: 2rem 1rem;
+    }
+  
+    .statistics-summary {
+      flex-direction: column;
+      align-items: center;
+    }
+  
+    .stat-card {
+      width: 100%;
+      max-width: 350px;
+    }
+  
+    .dashboard-grid {
+      grid-template-columns: 1fr; /* Stack items on smaller screens */
+    }
+
+  }
+  
+  /* Mobile Navbar Styles */
+  @media (max-width: 768px) {
+    .home-container {
+      padding-top: 60px; /* Space for mobile header */
+    }
+  
+    /* Mobile header (hamburger menu) */
+    .mobile-header {
+      display: flex;
+      background-color: #1e1e2d;
+      padding: 10px 20px;
+      justify-content: space-between;
+      align-items: center;
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 1000;
+    }
+    .app-layout{
+        margin-left:0px ;
+    }
+    .menu-toggle {
+      font-size: 1.5rem;
+      background: none;
+      border: none;
+      color: white;
+      cursor: pointer;
+    }
+  
+    .mobile-logo {
+      height: 50px;
+    }
+  
+    .home-container {
+      margin-left: 0; /* Ensure full screen usage on mobile */
+    }
+    
+    /* Content padding and transitions */
+    .dashboard-grid {
+      padding-top: 20px;
+    }
+  }
+  

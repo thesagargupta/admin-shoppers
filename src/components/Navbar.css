@@ -1,0 +1,212 @@
+/* General Styles */
+body {
+  margin: 0;
+  font-family: 'Arial', sans-serif;
+  background-color: #f8f9fa;
+  overflow-x: hidden;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* Mobile Header (Hamburger Menu) */
+.mobile-header {
+  display: none;
+  background-color: #1e1e2d;
+  padding: 10px 20px;
+  align-items: center;
+  justify-content: space-between;
+  color: white;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+}
+
+.menu-toggle {
+  font-size: 1.5rem;
+  background: none;
+  border: none;
+  color: white;
+  cursor: pointer;
+}
+
+.logo {
+  height: 140px;
+  filter: invert(100%);
+}
+
+.mobile-logo {
+  height: 50px;
+}
+
+/* Sidebar */
+.admin-navbar {
+  position: fixed;
+  top: 0;
+  left: -250px; /* Hidden by default on mobile */
+  width: 250px;
+  height: 100%;
+  background-color: #1e1e2d;
+  color: #ffffff;
+  transition: left 0.3s ease-in-out;
+  z-index: 999;
+  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+}
+
+.admin-navbar.open {
+  left: 0; /* Sidebar visible when open */
+  padding-top: 60px;
+}
+
+.admin-navbar-header {
+  padding: 20px;
+  background-color: #11112b;
+  text-align: center;
+}
+
+.admin-logo {
+  height: 80px;
+  width: 120px;
+  filter: invert(100%);
+}
+
+.admin-nav-links {
+  list-style: none;
+  padding: 0;
+  margin: 20px 0;
+}
+
+.admin-nav-links li {
+  margin-bottom: 15px;
+}
+
+.admin-nav-links a {
+  display: flex;
+  align-items: center;
+  color: #cfcfcf;
+  font-size: 1.1rem;
+  padding: 12px 20px;
+  border-radius: 4px;
+  transition: background-color 0.3s ease;
+}
+
+.admin-nav-links a:hover,
+.admin-nav-links .active-link {
+  background-color: #4444dd;
+  color: white;
+}
+
+.admin-nav-links a span {
+  margin-left: 10px;
+}
+
+.logout-section {
+  padding: 20px;
+  text-align: center;
+  background-color: #11112b;
+  border-top: 1px solid #333;
+}
+
+.logout-section a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #cfcfcf;
+  font-size: 1.1rem;
+  padding: 12px 20px;
+  border-radius: 4px;
+  transition: background-color 0.3s ease;
+}
+
+.logout-section a:hover {
+  background-color: #dd4444;
+  color: white;
+}
+
+.logout-section a span {
+  margin-left: 10px;
+}
+
+/* App Layout */
+.app-layout {
+  display: flex;
+  flex-direction: row;
+  min-height: 100vh;
+  margin-left: 250px; /* Reserve space for sidebar */
+}
+
+/* Mobile Sidebar Toggle */
+@media (max-width: 768px) {
+  .mobile-header {
+    display: flex;
+  }
+
+  .admin-navbar {
+    width: 100%;
+    left: -100%; /* Initially hidden off-screen */
+  }
+
+  .admin-navbar.open {
+    left: 0; /* Fully visible when open */
+  }
+
+  /* Ensure the content shifts to the right when sidebar opens */
+  .main-content {
+    transition: margin-left 0.3s ease;
+  }
+
+
+  /* Make sure content doesn't get hidden */
+  .app-layout {
+    flex-direction: column; /* Stack sidebar and content */
+  }
+
+  .admin-logo {
+    height: 100px;
+    margin-top: 30px;
+  }
+  .logo{
+    height: 50px;
+  }
+  .mobile-logo {
+    height: 50px;
+  }
+
+  .admin-nav-links a span,
+  .logout-section a span {
+    display: inline-block;
+  }
+}
+
+/* Desktop Sidebar */
+@media (min-width: 769px) {
+  .mobile-header {
+    display: none; /* Hide mobile header on desktop */
+  }
+
+  .admin-navbar {
+    width: 250px;
+    left: 0; /* Sidebar is always open on desktop */
+    position: fixed;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .main-content {
+    transition: margin-left 0.3s ease;
+  }
+
+  .admin-nav-links a {
+    padding: 12px 25px;
+  }
+}

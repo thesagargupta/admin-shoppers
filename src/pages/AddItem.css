@@ -1,0 +1,167 @@
+/* Add Item Form */
+.add-item-form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    box-sizing: border-box;
+    width: 100%;
+    max-width: 600px; 
+    background-color: #fff;
+    border-radius: 8px;
+    margin-left: 200px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  .centre-div{
+    display: flex;
+    justify-content: center;
+  }
+  /* Image Section (Flexbox Layout) */
+  .image {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    flex-wrap: wrap; /* Ensure images stack on smaller screens */
+  }
+  
+  /* Form Text */
+  .add-item-form p {
+    font-size: 1.2rem;
+    color: #333;
+    margin-bottom: 15px;
+    text-align: center; /* Center the text */
+  }
+  
+  /* Image Upload Label */
+  .image-upload-label {
+    display: inline-block;
+    position: relative;
+    cursor: pointer;
+    border: 2px dashed #ddd;
+    text-align: center;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    padding: 15px;
+    width: 150px; /* Keep consistent size */
+    transition: background-color 0.3s ease;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .image-upload-label:hover {
+    background-color: #f0f0f0;
+  }
+  
+  /* Image Styling */
+  .upload-image {
+    width: 100%;
+    max-width: 120px; /* Maximum image size */
+    height: auto;
+    margin-bottom: 10px;
+    transition: transform 0.3s ease;
+  }
+  
+  .upload-image:hover {
+    transform: scale(1.05); /* Image scale on hover */
+  }
+  
+  /* Input hidden (no need for styling) */
+  input[type="file"] {
+    display: none;
+  }
+  
+  /* Input field styling */
+  input[type="text"], textarea, input[type="number"], select {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+    box-sizing: border-box;
+  }
+  
+  textarea {
+    resize: vertical;
+    min-height: 100px;
+  }
+  
+  /* Responsive Styles */
+  
+  /* Tablet & Mobile Views */
+  @media (max-width: 1024px) {
+    .add-item-form {
+      padding: 15px; /* Adjust padding for smaller screens */
+      width: 90%; /* Allow for better use of screen space */
+    }
+  
+    .image {
+      gap: 15px; /* Reduce gap between images */
+    }
+  
+    .upload-image {
+      max-width: 100px; /* Reduce image size for smaller screens */
+    }
+  
+    /* Adjust text size */
+    .add-item-form p {
+      font-size: 1rem;
+    }
+  
+    .image-upload-label {
+      width: 120px; /* Adjust image upload button width */
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .add-item-form {
+      padding: 10px;
+      width: 100%; /* Full width on mobile */
+    }
+    .add-item-form{
+        margin-top: 60px;
+        margin-left: 0px
+    }
+    .image {
+      display: flex;
+      gap: 10px; /* Stack images vertically */
+    }
+  
+    .upload-image {
+      max-width: 80px; /* Further reduce image size */
+    }
+  
+    .image-upload-label {
+      width: 100px; /* Adjust upload button for mobile */
+    }
+  
+    /* Adjust form text size on mobile */
+    .add-item-form p {
+      font-size: 0.9rem;
+    }
+  
+    /* Reduce input field size for mobile */
+    input[type="text"], textarea, input[type="number"], select {
+      font-size: 0.9rem;
+      padding: 8px;
+    }
+  }
+  .add-item {
+    background-color: #ff2d2d;
+    color: white;
+    border: none;
+    padding: 12px;
+    width: 100%;
+    font-size: 1.1rem;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+  }
+  .add-item:hover {
+    background-color: #993000;
+  }
+  
+  .add-item:focus {
+    outline: none;
+  }
