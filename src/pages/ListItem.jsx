@@ -2,7 +2,7 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 import { backendUrl } from "../components/Config";
 import { toast, Toaster } from "react-hot-toast";
-import "./ListItem.css";
+import "./Listitem.css";
 import PropTypes from "prop-types";
 
 // Function to render stars for rating
