@@ -54,7 +54,7 @@ const Login = ({ setToken }) => {
           <h2>Admin Login</h2>
           <form onSubmit={onSubmitHandler}>
             <div className="input-group">
-              <label htmlFor="username">Username</label>
+              <label htmlFor="username">Email</label>
               <input
                 onChange={(e) => setEmail(e.target.value)}
                 value={email}
