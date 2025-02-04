@@ -60,7 +60,7 @@ const Login = ({ setToken }) => {
                 value={email}
                 type="text"
                 id="username"
-                placeholder="Enter your username"
+                placeholder="Enter your email"
                 required
               />
             </div>
