@@ -22,21 +22,27 @@ const Login = ({ setToken }) => {
   }, [setToken, navigate]);
 
   const onSubmitHandler = async (e) => {
+    e.preventDefault();
+    const loadingToast = toast.loading("Logging in...");
+    
     try {
-      e.preventDefault();
       const response = await axios.post(backendUrl + "/api/user/admin", {
         email,
         password,
       });
 
+      toast.dismiss(loadingToast); // Remove loading toast
+      
       if (response.data.success) {
         localStorage.setItem("token", response.data.token); // Store token in localStorage
         setToken(response.data.token); // Set token in state
+        toast.success("Login successful!");
         navigate("/"); // Navigate to home page
       } else {
         toast.error(response.data.message); // Invalid credentials message
       }
     } catch (error) {
+      toast.dismiss(loadingToast);
       console.log(error);
       toast.error("An error occurred. Please try again.");
     }
@@ -45,7 +51,6 @@ const Login = ({ setToken }) => {
   return (
     <div className="login-page">
       <Toaster position="top-center" reverseOrder={false} />
-
       <div className="login-container">
         <div className="login-box">
           <div className="logo-container">
@@ -88,7 +93,7 @@ const Login = ({ setToken }) => {
 };
 
 Login.propTypes = {
-  setToken: PropTypes.func.isRequired, // Validate handleLogout as a function and it's required
+  setToken: PropTypes.func.isRequired,
 };
 
 export default Login;
